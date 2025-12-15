@@ -15,7 +15,7 @@ onMounted(() => {
 <template>
   <div :class="{'fade-in-up': isLoaded}" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
     <!-- Etiqueta de ubicación -->
-    <h3 class="inline-block bg-[#C991DB] py-1 px-2 rounded text-sky-900 text-xs font-medium tracking-normal shadow-sm">
+    <h3 class="inline-block bg-[#C991DB] py-1 px-2 rounded text-black text-xs font-medium tracking-normal shadow-sm">
       Costura en Quito, Carolina
     </h3>
 
@@ -28,9 +28,9 @@ onMounted(() => {
       <span class="text-[#80196D] ml-1">Manos Expertas</span>
     </h2>
 
-    <!-- Descripción -->
-    <p :class="{'fade-in-up': isLoaded}" class="text-left  text-black text-base md:text-lg lg:text-xl max-w-3xl leading-snug tracking-wide mt-3 mb-4">
-      Nos dedicamos a que tu ropa te haga sentir increíble, especializada en un estilo que realmente te representa
+    <!-- Descripción mejorada -->
+    <p :class="{'fade-in-up': isLoaded}" class="text-left text-gray-700 text-base md:text-lg lg:text-xl max-w-3xl leading-relaxed tracking-normal mt-6 mb-6">
+      Nos dedicamos a que tu ropa te haga sentir <span class="font-semibold text-[#831378]">increíble</span>, especializada en un estilo que realmente <span class="font-semibold text-[#831378]">te representa</span>
     </p>
 
     <!-- Indicador de personas -->

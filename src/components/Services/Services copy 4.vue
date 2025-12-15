@@ -2,14 +2,14 @@
   <section id="cards" class="py-20 bg-gradient-to-b from-white to-gray-50">
     
     <!-- Título mejorado -->
-    <div class="text-center mb-4">
-      <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-4">
-        <span class="text-[#80196D]">Nuestros </span>
-        <span class="bg-gradient-to-r from-[#80196D]  bg-clip-text ">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-4">
+        <span class="text-black">Nuestros </span>
+        <span class="bg-gradient-to-r from-[#6c1a8b] to-pink-500 bg-clip-text text-transparent">
           Servicios
         </span>
       </h2>
-      <p class="text-gray-800 text-lg max-w-2x0 mx-auto">
+      <p class="text-gray-600 text-lg max-w-2xl mx-auto">
         Descubre nuestra gama completa de servicios de costura y diseño
       </p>
     </div>
@@ -52,7 +52,7 @@
             <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
               <h3 class="text-white text-xl font-bold mb-2">{{ item.name }}</h3>
               <p class="text-gray-200 text-sm mb-4">{{ item.description }}</p>
-              <button class="bg-gradient-to-r from-[#831378] px-4 py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 w-full">
+              <button class="bg-gradient-to-r from-[#6c1a8b] to-pink-500 text-white px-4 py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 w-full">
                 Ver más
               </button>
             </div>
@@ -199,33 +199,36 @@ const slides = [
 .nextArrowBtn {
   right: 20px;
 }
-/* Bullets Swiper circulares con color #831378 */
-:deep(.swiper-pagination-bullet) {
-  background: #831378;
-  opacity: 0.4;
+
+.swiper-pagination {
+  margin-top: 40px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.swiper-pagination-bullet {
+  background: linear-gradient(135deg, #d4d4d4, #e5e7eb);
   height: 12px;
   width: 12px;
-  border-radius: 50%; /* mantiene círculo */
+  opacity: 1;
+  border-radius: 100%;
   transition: all 0.3s ease;
   margin: 0 6px;
   cursor: pointer;
 }
 
-:deep(.swiper-pagination-bullet:hover) {
-  opacity: 0.7;
-  transform: scale(1.2); /* pequeño efecto al pasar el mouse */
+.swiper-pagination-bullet:hover {
+  background: linear-gradient(135deg, #9ca3af, #6b7280);
+  transform: scale(1.2);
 }
 
-:deep(.swiper-pagination-bullet-active) {
-  background: #831378;
-  opacity: 1;
-  height: 14px; /* ligeramente más grande para destacar */
-  width: 14px;
-  border-radius: 50%; /* siempre círculo */
-  box-shadow: 0 4px 15px rgba(131, 19, 120, 0.4); /* resaltar */
-  transform: scale(1.2); /* opcional, efecto de resalte */
+.swiper-pagination-bullet-active {
+  width: 32px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #6c1a8b 0%, #ec4899 100%);
+  box-shadow: 0 4px 15px rgba(108, 26, 139, 0.3);
 }
-
 
 /* Responsive */
 @media (max-width: 768px) {

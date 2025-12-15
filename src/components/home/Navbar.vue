@@ -3,25 +3,25 @@
     <div class="w-full max-w-[960px] flex items-center justify-between relative">
 
       <!-- Logo -->
-      <!-- <a href="/" class="flex items-center">
-        <img src="/img/Logo-Medvet.png" alt="Logo" class="h-[60px] w-auto" />
-      </a> -->
+      <a href="/" class="flex items-center">
+        <img src="../../assets/logo/LogoRosita.png" alt="Logo" class="h-[60px] w-auto" />
+      </a>
 
       <!-- Menú Escritorio -->
         <ul class="hidden lg:flex gap-8 font-medium text-black text-base">
-          <a href="/" class="hover:text-[#4E3D7A] transition-colors">Inicio</a>
-        <li><a href="#sobreNosotros" class="hover:text-[#4E3D7A] transition-colors">Sobre Nosotros</a></li>
-        <li><a href="#servicios" class="hover:text-[#4E3D7A] transition-colors">Servicios</a></li>
-        <li><a href="#Plan" class="hover:text-[#4E3D7A] transition-colors">VetPlan</a></li>
+          <a href="/" class="hover:text-[#831378] transition-colors">Inicio</a>
+        <li><a href="#sobreNosotros" class="hover:text-[#831378] transition-colors">Quiénes Somos</a></li>
+        <li><a href="#servicios" class="hover:text-[#831378] transition-colors">Servicios</a></li>
+        <li><a href="#Plan" class="hover:text-[#831378] transition-colors">Testimonios</a></li>
 
       </ul>
 
      <!-- Botón GPS Escritorio -->
-         <a href="#sucursales" class="hidden lg:flex items-center gap-2 bg-[#4E3D7A] text-white font-bold px-4 py-2 rounded-full hover:bg-blue-500 transition-colors">
+         <a href="#sucursales" class="hidden lg:flex items-center gap-2 bg-[#831378] text-white font-bold px-4 py-2 rounded-full ">
           <MapPinned /> Localización
         </a>
       <!-- Botón hamburguesa (móvil) -->
-      <button @click="isOpen = !isOpen" class="lg:hidden text-[#4E3D7A] focus:outline-none">
+      <button @click="isOpen = !isOpen" class="lg:hidden text-[#831378] focus:outline-none">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
           <path
             :class="{ 'hidden': isOpen }"
@@ -41,11 +41,11 @@
     <transition name="fade">
       <div v-if="isOpen" class="lg:hidden absolute top-full left-0 w-full bg-[#EFF1F5] px-4 py-3">
         <ul class="flex flex-col gap-4 text-right font-medium text-black text-base">
-          <li><a href="#inicio" class="hover:text-[#0c9AD1] transition-colors">Inicio</a></li>
-          <li><a href="#servicios" class="hover:text-[#0c9AD1] transition-colors">Servicios</a></li>
-          <li><a href="#contacto" class="hover:text-[#0c9AD1] transition-colors">Sobre Nosotros</a></li>
+          <li><a href="#inicio" class="hover:text-[#831378] transition-colors">Inicio</a></li>
+          <li><a href="#servicios" class="hover:text-[#831378] transition-colors">Servicios</a></li>
+          <li><a href="#contacto" class="hover:text-[#831378] transition-colors">Sobre Nosotros</a></li>
           <li>
-            <button class="flex items-center gap-2 bg-[#12538B] text-white px-4 py-2 rounded-full hover:bg-blue-500 transition-colors ml-auto">
+            <button class="flex items-center  text-white px-4 py-2 rounded-full">
               <MapPinned /> Localización
             </button>
           </li>
@@ -92,7 +92,7 @@ onUnmounted(() => {
   position: fixed;
   bottom: 135px;
   right: 30px;
-  background-color: #0C99D1;
+  background: linear-gradient(135deg, #6c1a8b 0%, #ff1493 100%);
   color: white;
   border: none;
   border-radius: 50%;

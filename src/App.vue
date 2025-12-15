@@ -14,10 +14,10 @@
   <About />
   <Services />
   <Whatsapp />
-
-
-
-
+  <Testimonio />
+  <Group />
+  <VisitSection />
+  <Footer />
 </template>
 
 <script setup>
@@ -27,8 +27,8 @@ import HomeRigth from './components/home/HomeRigth.vue'
 import About from './components/About/About.vue'
 import Services from './components/Services/Services.vue'
 import Whatsapp from './components/Whatsapp.vue';
-
-
-
-
+import Testimonio from './components/About/Testimonio.vue';
+import Group from './components/About/GroupWorket.vue';
+import VisitSection from './components/About/VisitSection.vue';
+import Footer from './components/Footer/Footer.vue';
 </script>
