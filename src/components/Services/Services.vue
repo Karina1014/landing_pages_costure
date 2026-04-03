@@ -1,267 +1,167 @@
 <template>
-  <section id="cards" class="py-20 bg-gradient-to-b from-white to-gray-50">
+  <section id="servicios" class="w-full bg-[#FAF9FC] py-16 lg:py-24 overflow-hidden relative">
     
-    <!-- Título mejorado -->
-    <div class="text-center mb-4">
-      <h2 class="text-4xl sm:text-5xl md:text-6xl font-bold leading-tight mb-4">
-        <span class="text-[#80196D]">Nuestros </span>
-        <span class="bg-gradient-to-r from-[#80196D]  bg-clip-text ">
-          Servicios
-        </span>
-      </h2>
-      <p class="text-gray-800 text-lg max-w-2x0 mx-auto">
-        Descubre nuestra gama completa de servicios de costura y diseño
-      </p>
+    <!-- Título y Encabezado (Escala Reducida) -->
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 mb-12 text-center">
+      <div class="flex flex-col items-center gap-3">
+        <span class="text-[9px] font-black uppercase tracking-[0.4em] text-[#831378] opacity-60">Excelencia en Costura</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 leading-tight tracking-tighter">
+          Nuestros <span class="text-[#831378]">Servicios</span>
+        </h2>
+        <div class="h-[1px] w-12 bg-[#831378]/30 mt-1"></div>
+      </div>
     </div>
 
-    <div class="main-content">
+    <!-- ======== CONTENEDOR CARRUSEL META STYLE (Compacto) ======== -->
+    <div class="relative w-full">
       <Swiper
-        :modules="[Navigation, Pagination, EffectCoverflow]"
+        :modules="[Navigation, Pagination, Autoplay]"
         :loop="true"
-        :slides-per-view="3"
+        :slides-per-view="1.25"
         :centered-slides="true"
-        :space-between="50"
-        :effect="'coverflow'"
-        :cover-flow-effect="{
-          rotate: 35,
-          stretch: 100,
-          depth: 400,
-          modifier: 1,
-          slideShadows: true
+        :space-between="20"
+        :autoplay="{ delay: 5000, disableOnInteraction: false }"
+        :navigation="{
+          nextEl: '.nextBtn',
+          prevEl: '.prevBtn'
         }"
         :pagination="{
-          el: '.swiper-pagination',
+          el: '.custom-pagination',
           clickable: true
         }"
-        :navigation="{
-          nextEl: '.nextArrowBtn',
-          prevEl: '.prevArrowBtn'
-        }"
         :breakpoints="{
-          320: { slidesPerView: 1, spaceBetween: 20 },
-          576: { slidesPerView: 1.5, spaceBetween: 30 },
-          768: { slidesPerView: 3, spaceBetween: 50 }
+          640: { slidesPerView: 1.8, spaceBetween: 30 },
+          1024: { slidesPerView: 2.5, spaceBetween: 40 },
+          1536: { slidesPerView: 3.2, spaceBetween: 50 }
         }"
-        class="swiper"
+        class="services-swiper !overflow-visible"
       >
-        <SwiperSlide v-for="(item, i) in slides" :key="i">
-          <div class="slide-wrapper group">
-            <img :src="item.img" :alt="item.name" class="slide-image" />
-            
-            <!-- Overlay con info -->
-            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
-              <h3 class="text-white text-xl font-bold mb-2">{{ item.name }}</h3>
-              <p class="text-gray-200 text-sm mb-4">{{ item.description }}</p>
-              <button class="bg-gradient-to-r from-[#831378] px-4 py-2 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 w-full">
-                Ver más
-              </button>
+        <SwiperSlide v-for="(item, i) in services" :key="i" v-slot="{ isActive }">
+          <div 
+            class="flex flex-col gap-6 transition-all duration-700"
+            :class="isActive ? 'opacity-100 scale-100' : 'opacity-30 scale-90 blur-[1px]'"
+          >
+            <!-- Card de Imagen -->
+            <div class="relative aspect-[16/11] w-full rounded-[2rem] overflow-hidden shadow-lg bg-white border border-gray-100">
+              <img :src="item.img" :alt="item.name" class="w-full h-full object-cover transition-transform duration-1000" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent"></div>
+              
+              <!-- Badge Minimalista -->
+              <div class="absolute top-4 right-4 px-3 py-1 bg-white/40 backdrop-blur-md border border-white/20 rounded-full text-white text-[8px] font-bold uppercase tracking-widest">
+                Premium
+              </div>
+            </div>
+
+            <!-- Información -->
+            <div class="text-center px-4">
+              <h3 class="text-xl lg:text-2xl font-black text-gray-900 mb-2 tracking-tight">
+                {{ item.name }}
+              </h3>
+              <p class="text-gray-500 text-sm max-w-sm mx-auto leading-relaxed">
+                {{ item.description }}
+              </p>
             </div>
           </div>
         </SwiperSlide>
       </Swiper>
 
-      <!-- Flechas mejoradas -->
-      <div class="prevArrowBtn group">
-        <i class="bx bx-chevron-left group-hover:scale-125 transition-transform duration-300"></i>
+      <!-- Botones de Navegación (Más Pequeños) -->
+      <div class="absolute top-[40%] left-0 right-0 -translate-y-1/2 flex justify-between px-2 lg:px-8 pointer-events-none z-30">
+        <button class="prevBtn w-12 h-12 rounded-full bg-white/60 backdrop-blur-md border border-white/40 shadow-lg flex items-center justify-center text-gray-800 pointer-events-auto hover:bg-white transition-all duration-300">
+          <ChevronLeft class="w-6 h-6" />
+        </button>
+        <button class="nextBtn w-12 h-12 rounded-full bg-white/60 backdrop-blur-md border border-white/40 shadow-lg flex items-center justify-center text-gray-800 pointer-events-auto hover:bg-white transition-all duration-300">
+          <ChevronRight class="w-6 h-6" />
+        </button>
       </div>
-      <div class="nextArrowBtn group">
-        <i class="bx bx-chevron-right group-hover:scale-125 transition-transform duration-300"></i>
-      </div>
-
-      <!-- Bullets mejorados -->
-      <div class="swiper-pagination"></div>
     </div>
+
+    <!-- Paginación -->
+    <div class="custom-pagination mt-12 flex justify-center gap-2"></div>
   </section>
 </template>
 
 <script setup>
 import { Swiper, SwiperSlide } from "swiper/vue";
-import { Pagination, Navigation, EffectCoverflow } from "swiper/modules";
+import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import { ChevronLeft, ChevronRight } from 'lucide-vue-next';
 
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/effect-coverflow";
 
-// === Importa tus imágenes ===
 import img1 from "@/assets/home/costura1.png";
 import img2 from "@/assets/home/costura2.png";
 import img3 from "@/assets/home/costura3.png";
 import img4 from "@/assets/home/costura4.png";
 
-// === Lista con descripciones ===
-const slides = [
+const services = [
   { 
     img: img1, 
-    name: "Arreglos Básicos",
-    description: "Ajustes y modificaciones en tus prendas favoritas"
+    name: "Arreglos de Alta Costura",
+    description: "Personalización técnica para un ajuste anatómico impecable."
   },
   { 
     img: img2, 
-    name: "Diseño Personalizado",
-    description: "Crea prendas únicas diseñadas especialmente para ti"
+    name: "Diseño & Transformación",
+    description: "Reimaginamos tus prendas para adaptarlas a tendencias modernas."
   },
   { 
     img: img3, 
-    name: "Restauración",
-    description: "Devuelve la vida a tus prendas antiguas"
+    name: "Restauración Textil",
+    description: "Cuidado artesanal para prendas dañadas, preservando su esencia."
   },
   { 
     img: img4, 
-    name: "Confección",
-    description: "Creamos tus diseños desde cero con máxima calidad"
+    name: "Confección sobre Medida",
+    description: "Creación exclusiva basada en tus especificaciones personales."
   }
 ];
 </script>
 
 <style scoped>
-@import url("https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css");
-
-#cards {
-  max-width: 1400px;
-  padding: 0 2rem;
-  margin: 0 auto;
-  min-height: 70vh;
+.services-swiper {
+  padding-bottom: 20px;
 }
 
-.main-content {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.italic-style {
+  font-family: serif;
+  font-style: italic;
 }
 
-.swiper {
-  width: 100%;
-  padding: 60px 20px;
-}
-
-.slide-wrapper {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-}
-
-.slide-image {
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-  object-fit: cover;
-  display: block;
-  cursor: pointer;
+:deep(.swiper-pagination-bullet) {
+  width: 8px;
+  height: 3px;
+  border-radius: 2px;
+  background: #831378;
+  opacity: 0.15;
   transition: all 0.4s ease;
 }
 
-.swiper-slide {
-  width: 300px;
-  height: 350px;
-}
-
-.swiper-slide-active .slide-image {
-  border-radius: 24px;
-  box-shadow: 0 25px 50px rgba(108, 26, 139, 0.25);
-  filter: brightness(1.05);
-}
-
-/* Flechas mejoradas con gradiente */
-.prevArrowBtn,
-.nextArrowBtn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 3.2rem;
-  height: 3.2rem;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #6c1a8b 0%, #ec4899 100%);
-  color: white;
-  display: grid;
-  place-items: center;
-  font-size: 1.4rem;
-  cursor: pointer;
-  box-shadow: 0 4px 20px rgba(108, 26, 139, 0.2);
-  transition: all 0.3s ease;
-  z-index: 10;
-  border: 2px solid transparent;
-}
-
-.prevArrowBtn:hover,
-.nextArrowBtn:hover {
-  transform: translateY(-50%) scale(1.2);
-  box-shadow: 0 8px 30px rgba(108, 26, 139, 0.4);
-  background: linear-gradient(135deg, #ec4899 0%, #6c1a8b 100%);
-}
-
-.prevArrowBtn {
-  left: 20px;
-}
-
-.nextArrowBtn {
-  right: 20px;
-}
-/* Bullets Swiper circulares con color #831378 */
-:deep(.swiper-pagination-bullet) {
-  background: #831378;
-  opacity: 0.4;
-  height: 12px;
-  width: 12px;
-  border-radius: 50%; /* mantiene círculo */
-  transition: all 0.3s ease;
-  margin: 0 6px;
-  cursor: pointer;
-}
-
-:deep(.swiper-pagination-bullet:hover) {
-  opacity: 0.7;
-  transform: scale(1.2); /* pequeño efecto al pasar el mouse */
-}
-
 :deep(.swiper-pagination-bullet-active) {
-  background: #831378;
+  width: 32px;
   opacity: 1;
-  height: 14px; /* ligeramente más grande para destacar */
-  width: 14px;
-  border-radius: 50%; /* siempre círculo */
-  box-shadow: 0 4px 15px rgba(131, 19, 120, 0.4); /* resaltar */
-  transform: scale(1.2); /* opcional, efecto de resalte */
+  background: #831378;
 }
 
-
-/* Responsive */
-@media (max-width: 768px) {
-  #cards {
-    padding: 0 1rem;
-  }
-
-  .swiper-slide {
-    width: 250px;
-    height: 300px;
-  }
-
-  .prevArrowBtn,
-  .nextArrowBtn {
-    width: 2.8rem;
-    height: 2.8rem;
-    font-size: 1.2rem;
-  }
+#servicios::before,
+#servicios::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 10%;
+  z-index: 20;
+  pointer-events: none;
 }
 
-@media (max-width: 576px) {
-  .swiper-slide {
-    width: 200px;
-    height: 250px;
-  }
+#servicios::before {
+  left: 0;
+  background: linear-gradient(to right, #FAF9FC 0%, transparent 100%);
+}
 
-  .prevArrowBtn {
-    left: 10px;
-  }
-
-  .nextArrowBtn {
-    right: 10px;
-  }
-
-  .swiper {
-    padding: 40px 10px;
-  }
+#servicios::after {
+  right: 0;
+  background: linear-gradient(to left, #FAF9FC 0%, transparent 100%);
 }
 </style>

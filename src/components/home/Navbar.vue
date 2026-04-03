@@ -1,58 +1,68 @@
 <template>
-  <nav class="fixed top-0 left-0 w-full z-[999] bg-[#D6D2E0] px-4 py-3 flex justify-center shadow-md">
-    <div class="w-full max-w-[960px] flex items-center justify-between relative">
+  <nav class="fixed top-0 left-0 w-full z-[999] bg-[#D6D2E0] px-6 py-4 flex justify-center shadow-[0_4px_20px_rgba(0,0,0,0.08)] backdrop-blur-sm bg-opacity-95">
+    <div class="w-full max-w-7xl flex items-center justify-between relative">
 
-      <!-- Logo -->
-      <a href="/" class="flex items-center">
-        <img src="../../assets/logo/LogoRosita.png" alt="Logo" class="h-[60px] w-auto" />
+      <!-- Logo & Branding -->
+      <a href="/" class="flex items-center gap-4 group">
+        <div class="relative">
+          <img src="../../assets/logo/LogoRosita.png" alt="Logo" class="h-14 w-auto transition-transform duration-500 group-hover:scale-110" />
+          <div class="absolute -inset-1 bg-[#831378] opacity-0 group-hover:opacity-10 rounded-full blur transition-opacity"></div>
+        </div>
+        <div class="flex flex-col">
+          <span class="text-xl md:text-2xl font-black text-[#831378] tracking-tighter leading-none">Costura</span>
+          <span class="text-[10px] md:text-xs font-bold text-gray-700 tracking-[0.2em] uppercase mt-1">Entre Hilos & Agujas</span>
+        </div>
       </a>
 
-      <!-- Menú Escritorio -->
-        <ul class="hidden lg:flex gap-8 font-medium text-black text-base">
-          <a href="/" class="hover:text-[#831378] transition-colors">Inicio</a>
-        <li><a href="#sobreNosotros" class="hover:text-[#831378] transition-colors">Quiénes Somos</a></li>
-        <li><a href="#servicios" class="hover:text-[#831378] transition-colors">Servicios</a></li>
-        <li><a href="#Plan" class="hover:text-[#831378] transition-colors">Testimonios</a></li>
-
+      <!-- Menú Escritorio (Centrado Absoluto) -->
+      <ul class="hidden lg:flex items-center gap-10 absolute left-1/2 -translate-x-1/2">
+        <li>
+          <a href="/" class="text-gray-900 font-bold hover:text-[#831378] transition-all relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[#831378] after:transition-all hover:after:w-full">Inicio</a>
+        </li>
+        <li>
+          <a href="#sobreNosotros" class="text-gray-900 font-bold hover:text-[#831378] transition-all relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[#831378] after:transition-all hover:after:w-full">Quiénes Somos</a>
+        </li>
+        <li>
+          <a href="#servicios" class="text-gray-900 font-bold hover:text-[#831378] transition-all relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[#831378] after:transition-all hover:after:w-full">Servicios</a>
+        </li>
+        <li>
+          <a href="#Plan" class="text-gray-900 font-bold hover:text-[#831378] transition-all relative after:content-[''] after:absolute after:bottom-[-4px] after:left-0 after:w-0 after:h-[2px] after:bg-[#831378] after:transition-all hover:after:w-full">Testimonios</a>
+        </li>
       </ul>
 
-     <!-- Botón GPS Escritorio -->
-         <a href="#sucursales" class="hidden lg:flex items-center gap-2 bg-[#831378] text-white font-bold px-4 py-2 rounded-full ">
-          <MapPinned /> Localización
+      <!-- Botón Localización (Derecha) -->
+      <div class="flex items-center gap-4">
+        <a href="#sucursales" class="hidden md:flex items-center gap-2 bg-[#831378] text-white font-bold px-6 py-2.5 rounded-xl shadow-lg shadow-[#831378]/20 hover:bg-[#6c1063] hover:-translate-y-0.5 transition-all active:scale-95">
+          <MapPinned class="w-5 h-5" />
+          <span>Localización</span>
         </a>
-      <!-- Botón hamburguesa (móvil) -->
-      <button @click="isOpen = !isOpen" class="lg:hidden text-[#831378] focus:outline-none">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path
-            :class="{ 'hidden': isOpen }"
-            stroke-linecap="round" stroke-linejoin="round"
-            d="M4 6h16M4 12h16M4 18h16"
-          />
-          <path
-            v-if="isOpen"
-            stroke-linecap="round" stroke-linejoin="round"
-            d="M6 18L18 6M6 6l12 12"
-          />
-        </svg>
-      </button>
+
+        <!-- Menú Hamburguesa -->
+        <button @click="isOpen = !isOpen" class="lg:hidden p-2 text-[#831378] hover:bg-white/20 rounded-lg transition-colors focus:outline-none">
+          <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+            <path v-if="!isOpen" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            <path v-else stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
     </div>
 
-    <!-- Menú móvil -->
-    <transition name="fade">
-      <div v-if="isOpen" class="lg:hidden absolute top-full left-0 w-full bg-[#EFF1F5] px-4 py-3">
-        <ul class="flex flex-col gap-4 text-right font-medium text-black text-base">
-          <li><a href="#inicio" class="hover:text-[#831378] transition-colors">Inicio</a></li>
-          <li><a href="#servicios" class="hover:text-[#831378] transition-colors">Servicios</a></li>
-          <li><a href="#contacto" class="hover:text-[#831378] transition-colors">Sobre Nosotros</a></li>
-          <li>
-            <button class="flex items-center  text-white px-4 py-2 rounded-full">
+    <!-- Menú Móvil -->
+    <transition name="mobile-menu">
+      <div v-if="isOpen" class="lg:hidden absolute top-full left-0 w-full bg-[#D6D2E0] border-t border-black/5 shadow-2xl px-6 py-8">
+        <ul class="flex flex-col gap-6 text-center">
+          <li><a @click="isOpen = false" href="#inicio" class="text-xl font-black text-gray-900 hover:text-[#831378]">Inicio</a></li>
+          <li><a @click="isOpen = false" href="#sobreNosotros" class="text-xl font-black text-gray-900 hover:text-[#831378]">Quiénes Somos</a></li>
+          <li><a @click="isOpen = false" href="#servicios" class="text-xl font-black text-gray-900 hover:text-[#831378]">Servicios</a></li>
+          <li><a @click="isOpen = false" href="#Plan" class="text-xl font-black text-gray-900 hover:text-[#831378]">Testimonios</a></li>
+          <li class="pt-4">
+            <a @click="isOpen = false" href="#sucursales" class="inline-flex items-center gap-2 bg-[#831378] text-white font-bold px-10 py-4 rounded-2xl shadow-xl">
               <MapPinned /> Localización
-            </button>
+            </a>
           </li>
         </ul>
       </div>
     </transition>
-
   </nav>
 </template>
 
@@ -81,47 +91,43 @@ onUnmounted(() => {
 </script>
 
 <style scoped>
-.fade-enter-active, .fade-leave-active {
-  transition: opacity 0.3s ease;
-}
-.fade-enter-from, .fade-leave-to {
-  opacity: 0;
+/* Transición del menú móvil (Senior) */
+.mobile-menu-enter-active,
+.mobile-menu-leave-active {
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
 }
 
+.mobile-menu-enter-from,
+.mobile-menu-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+/* Scroll Top Button (Estilo Refinado) */
 .scroll-top-btn {
   position: fixed;
-  bottom: 135px;
+  bottom: 30px;
   right: 30px;
-  background: linear-gradient(135deg, #6c1a8b 0%, #ff1493 100%);
+  background: #831378;
   color: white;
   border: none;
-  border-radius: 50%;
-  padding: 0.8rem;
-  font-size: 0.5rem;
+  border-radius: 12px;
+  padding: 10px;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-  transition:
-    opacity 0.4s ease,
-    transform 0.4s ease;
+  box-shadow: 0 10px 20px rgba(131, 19, 120, 0.3);
+  transition: all 0.3s ease;
   opacity: 0;
-  transform: scale(0.8);
-  pointer-events: none;
+  transform: translateY(20px);
   z-index: 9999;
 }
 
 .scroll-top-btn.visible {
   opacity: 1;
-  transform: scale(1);
-  pointer-events: auto;
+  transform: translateY(0);
 }
 
 .scroll-top-btn:hover {
-  background-color: #3b82f6;
+  background-color: #6c1063;
   transform: scale(1.1);
-}
-
-.icon {
-  width: 24px;
-  height: 24px;
 }
 </style>

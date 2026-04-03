@@ -1,91 +1,74 @@
 <template>
-  <section id="sobreNosotros" class="w-full bg-gradient-to-br from-[#eaeaea] via-white to-[#f5f5f5] py-8 sm:py-12 md:py-16 lg:py-20">
-
-    <!-- CONTENEDOR PRINCIPAL -->
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-8 sm:gap-10 md:gap-12 lg:gap-16">
-
-      <!-- ======== IMAGEN TIPO REEL ======== -->
-      <div class="w-full lg:w-1/2 flex justify-center order-2 lg:order-1 px-2 sm:px-0">
-        <div class="relative w-full max-w-[320px] sm:max-w-[340px] md:max-w-[380px] aspect-[9/14] bg-white shadow-2xl rounded-[30px] sm:rounded-[35px] overflow-hidden flex items-center justify-center group">
-          <img
-            :src="costuraImg"
-            alt="Trabajo de costura"
-            class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-          />
-
-          <!-- EFECTO SUPERIOR -->
-          <div class="absolute top-0 left-0 w-full h-20 sm:h-24 bg-gradient-to-b from-black/40 to-transparent"></div>
-
-          <!-- EFECTO INFERIOR -->
-          <div class="absolute bottom-0 left-0 w-full h-24 sm:h-28 bg-gradient-to-t from-black/50 to-transparent"></div>
-
-          <!-- TEXTO ESTILO REEL -->
-          <div class="absolute bottom-4 sm:bottom-6 left-4 sm:left-6 text-white">
-            <p class="text-base sm:text-lg font-semibold">Costura & Diseño</p>
-            <p class="text-xs sm:text-sm opacity-90">@costura_experta</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- ======== TEXTO MEJORADO ======== -->
-      <div class="w-full lg:w-1/2 flex flex-col gap-4 sm:gap-5 md:gap-6 order-1 lg:order-2 px-2 sm:px-0">
-        
-        <!-- HEADER CON DECORACIÓN -->
-        <div class="space-y-2 sm:space-y-3">
-          <div class="flex items-center gap-2 sm:gap-3 mb-2 sm:mb-3">
-            <div class="h-1 w-8 sm:w-12 bg-gradient-to-r from-[#831378] rounded-full"></div>
-            <span class="text-xs sm:text-sm font-semibold text-[#831378] uppercase tracking-widest">
-              Quiénes Somos
-            </span>
-          </div>
-          
-          <h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
-            <span class="text-black">🧵 La Magia del </span>
-            <br class="hidden sm:block" />
-              Ajuste Perfecto
-            
-          </h2>
-        </div>
-
-        <!-- PÁRRAFO CON MEJOR TIPOGRAFÍA -->
-        <p class="text-base sm:text-lg md:text-lg lg:text-xl text-gray-600 leading-relaxed font-light">
-          Presentamos nuestro servicio de <span class="font-semibold text-[#831378]">Arreglos de Alta Costura</span> basado en la experiencia y la precisión de cada detalle.
-        </p>
-
-     
-
-        <!-- TEXTO FINAL CON ÉNFASIS -->
-        <div class="bg-gradient-to-r from-[#6c1a8b]/5 border-l-4 border-[#831378] p-4 sm:p-5 md:p-6 rounded-lg mt-2 sm:mt-4">
-          <p class="text-sm sm:text-base md:text-lg text-gray-700 leading-relaxed">
-            Transformamos y adaptamos <span class="font-bold text-[#831378]">sin esfuerzo</span> cada prenda para que se ajuste <span class="font-bold text-[#831378]">perfectamente</span> a tu cuerpo y estilo personal.
-          </p>
-        </div>
-
-      <!-- CTA BUTTON - RESPONSIVE -->
-    <div class="flex justify-center lg:justify-start mt-4 sm:mt-6 md:mt-8">
-      <button
-        class="
-          group
-          inline-flex items-center gap-2
-          px-6 sm:px-8
-          py-2.5 sm:py-3
-          bg-[#831378]
-          text-white font-bold text-sm sm:text-base
-          rounded-full
-          transition-all duration-300
-          hover:scale-105
-          hover:shadow-xl
-          active:scale-95
-          w-full sm:w-auto
-          justify-center sm:justify-start
-        "
-      >
-        Conoce Nuestros Servicios
-        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-        </svg>
-      </button>
+  <section id="sobreNosotros" class="w-full bg-[#FAF9FC] py-20 lg:py-32 overflow-hidden relative">
+    <!-- Decoración de fondo: Marca de agua sutil -->
+    <div class="absolute top-10 right-[-5%] text-[15rem] font-black text-gray-100/50 select-none pointer-events-none italic-style leading-none">
+      Entre Hilos & Agujas  
     </div>
+
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+      <div class="flex flex-col lg:flex-row items-center gap-20 lg:gap-32">
+        
+        <!-- ======== CONTENIDO TEXTUAL (Primero en móvil) ======== -->
+        <div class="w-full lg:flex-1 flex flex-col items-start gap-8 order-1">
+          
+          <div class="space-y-4">
+            <div class="flex items-center gap-4">
+              <span class="text-[11px] font-black uppercase tracking-[0.5em] text-[#831378]">Quiénes Somos</span>
+              <div class="h-[1px] flex-1 bg-gradient-to-r from-[#831378]/30 to-transparent"></div>
+            </div>
+
+            <h2 class="text-4xl sm:text-5xl font-bold text-gray-900 leading-[0.95] tracking-tighter">
+              La Magia del <br />
+              <span class="text-[#831378] drop-shadow-sm">Ajuste Perfecto</span>
+            </h2>
+          </div>
+
+          <p class="text-xl text-gray-600 leading-relaxed max-w-lg font-medium">
+            Presentamos nuestro servicio de <span class="text-gray-900 font-bold border-b-2 border-[#831378]/20">Arreglos de Alta Costura</span> basado en la experiencia y la precisión de cada detalle.
+          </p>
+
+          <div class="relative bg-white/50 backdrop-blur-sm p-8 rounded-3xl border border-[#831378]/5 group-hover:border-[#831378]/10 transition-colors">
+            <div class="absolute -top-3 -left-3 text-4xl text-[#831378]/20 italic-style font-black">"</div>
+            <p class="text-gray-700 italic-style text-xl leading-relaxed relative z-10">
+              Transformamos y adaptamos <span class="text-[#831378] font-bold">sin esfuerzo</span> cada prenda para que se ajuste <span class="text-[#831378] font-bold">perfectamente</span> a tu cuerpo y estilo personal.
+            </p>
+          </div>
+        </div>
+
+        <!-- ======== IMAGEN CREATIVA (Después en móvil) ======== -->
+        <div class="w-full lg:w-[38%] relative group px-4 order-2">
+          <!-- Decoración: Círculo de fondo animado -->
+          <div class="absolute -top-10 -left-10 w-48 h-48 bg-[#831378]/5 rounded-full blur-[80px] group-hover:bg-[#831378]/10 transition-all duration-1000"></div>
+          
+          <div class="relative">
+            <!-- Capa 1: Borde de Costura (Stitches) -->
+            <div class="absolute inset-0 border-2 border-dashed border-[#831378]/20 rounded-[2.5rem] rotate-3 group-hover:rotate-0 "></div>
+            
+            <!-- Capa 2: Contenedor Imagen -->
+            <div class="relative aspect-[4/5] rounded-[2rem] overflow-hidden shadow-[0_40px_80px_-15px_rgba(0,0,0,0.2)] bg-white z-10 transform -rotate-2 ">
+              <img
+                :src="costuraImg"
+                alt="Creatividad en Costura"
+                class="w-full h-full object-cover transition-transform  "
+              />
+              
+              <!-- Efecto Lente/Brillo -->
+              <div class="absolute inset-0 bg-gradient-to-tr from-[#831378]/20 via-transparent to-white/10 mix-blend-overlay"></div>
+              
+              <!-- Badge Flotante (Refinado) -->
+              <div class="absolute bottom-6 left-6 right-6 bg-black/40 backdrop-blur-md border border-white/10 p-4 rounded-xl transform translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 text-center">
+                <p class="text-white font-bold text-sm tracking-tight italic-style">Arte en cada puntada</p>
+              </div>
+            </div>
+
+            <!-- Adorno: Icono de Tijeras -->
+            <div class="absolute -bottom-4 -right-4 w-16 h-16 bg-white rounded-full shadow-xl flex items-center justify-center z-20 border border-gray-100 animate-bounce-slow">
+              <div class="w-10 h-10 rounded-full border border-dashed border-[#831378]/30 flex items-center justify-center">
+                <Scissors class="w-5 h-5 text-[#831378] transform -rotate-45" />
+              </div>
+            </div>
+          </div>
+        </div>
 
       </div>
     </div>
@@ -93,45 +76,38 @@
 </template>
 
 <script setup>
+import { ArrowRight, Scissors } from 'lucide-vue-next'
 const costuraImg = new URL('@/assets/logo/About.jpeg', import.meta.url).href
 </script>
 
 <style scoped>
-/* Animación suave de entrada */
-@keyframes slideInUp {
-  from {
+@keyframes reveal-up {
+  0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
   }
-  to {
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
+@keyframes bounce-slow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* .animate-bounce-slow {
+  animation: bounce-slow 4s ease-in-out infinite;
+} */
+
 section {
-  animation: slideInUp 0.8s ease-out;
+  animation: reveal-up 1.2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
 }
 
-/* Media queries adicionales para optimizar */
-@media (max-width: 640px) {
-  /* Ajustes extra para móviles pequeños */
-  :deep(.swiper) {
-    padding: 30px 10px;
-  }
-}
-
-@media (max-width: 480px) {
-  /* Ajustes para móviles muy pequeños */
-  section {
-    padding: 20px 0;
-  }
-}
-
-/* Para tablets horizontales */
-@media (min-width: 768px) and (max-height: 600px) {
-  section {
-    padding: 40px 0;
-  }
+.italic-style {
+  font-family: serif;
+  font-style: italic;
+  font-weight: 500;
 }
 </style>

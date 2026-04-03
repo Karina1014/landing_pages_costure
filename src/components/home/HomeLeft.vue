@@ -13,34 +13,31 @@ onMounted(() => {
 </script>
 
 <template>
-  <div :class="{'fade-in-up': isLoaded}" class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-24">
+  <div :class="{'fade-in-up': isLoaded}" class="w-full max-w-xl mx-auto lg:mx-0 px-4 pt-10 lg:pt-0">
     <!-- Etiqueta de ubicación -->
-    <h3 class="inline-block bg-[#C991DB] py-1 px-2 rounded text-black text-xs font-medium tracking-normal shadow-sm">
+    <span class="inline-block bg-[#E8D5EB] text-[#831378] py-1 px-3 rounded-md text-sm font-bold tracking-tight mb-4 shadow-sm">
       Costura en Quito, Carolina
-    </h3>
+    </span>
 
     <!-- Título principal -->
-    <h2 :class="{'fade-in-up': isLoaded}" class="text-left text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold leading-tight max-w-3xl tracking-tight mt-3">
-      <span class="text-black">Tu </span>
-      <span class="text-[#80196D] ml-1">vestuario </span>
-      <span class="text-black">en</span>
-      <br />
-      <span class="text-[#80196D] ml-1">Manos Expertas</span>
-    </h2>
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.1] text-gray-900 tracking-tighter mb-6">
+      Tu <span class="text-[#831378]">vestuario</span> en<br />
+      <span class="text-[#831378]">Manos Expertas</span>
+    </h1>
 
-    <!-- Descripción mejorada -->
-    <p :class="{'fade-in-up': isLoaded}" class="text-left text-gray-700 text-base md:text-lg lg:text-xl max-w-3xl leading-relaxed tracking-normal mt-6 mb-6">
-      Nos dedicamos a que tu ropa te haga sentir <span class="font-semibold text-[#831378]">increíble</span>, especializada en un estilo que realmente <span class="font-semibold text-[#831378]">te representa</span>
+    <!-- Descripción -->
+    <p class="text-gray-700 text-lg sm:text-xl leading-relaxed mb-8 max-w-lg">
+      Nos dedicamos a que tu ropa te haga sentir <span class="font-bold">increíble</span>, especializada en un estilo que realmente <span class="font-bold">te representa.</span>
     </p>
 
     <!-- Indicador de personas -->
-    <div :class="{'fade-in-up': isLoaded}" class="mt-4 inline-flex items-center rounded-[20px] bg-[#831378] px-2 py-1">
-      <div class="inline-flex relative rounded-full overflow-hidden space-x-[-10px] h-8">
-        <img :src="veterinariaImg1" alt="Mascota 1" class="w-8 h-8 rounded-full object-cover z-10" />
-        <img :src="veterinariaImg2" alt="Mascota 2" class="w-8 h-8 rounded-full object-cover z-20" />
-        <img :src="veterinariaImg3" alt="Mascota 3" class="w-8 h-8 rounded-full object-cover z-30" />
+    <div class="inline-flex items-center gap-4 bg-[#831378] pl-2 pr-8 py-2.5 rounded-xl shadow-xl shadow-[#831378]/20 transition-all hover:scale-105 hover:-translate-y-1 cursor-pointer">
+      <div class="flex -space-x-2">
+        <img :src="veterinariaImg1" alt="Cliente 1" class="w-10 h-10 rounded-full border-2 border-white object-cover shadow-sm" />
+        <img :src="veterinariaImg2" alt="Cliente 2" class="w-10 h-10 rounded-full border-2 border-white object-cover shadow-sm" />
+        <img :src="veterinariaImg3" alt="Cliente 3" class="w-10 h-10 rounded-full border-2 border-white object-cover shadow-sm" />
       </div>
-      <span class="ml-2 text-white font-semibold text-xs sm:text-sm md:text-base">+100 Clientes atendidos</span>
+      <span class="text-white font-bold text-sm sm:text-base">+ 100 Clientes atendidos</span>
     </div>
   </div>
 </template>

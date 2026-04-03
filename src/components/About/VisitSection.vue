@@ -1,131 +1,102 @@
 <template>
-  <section class="w-full bg-gradient-to-br from-white via-purple-50 to-white py-20">
-    <div class="max-w-7xl mx-auto px-6">
-      <!-- Título general -->
-      <div class="text-center mb-16">
-        <h2 class="text-4xl sm:text-5xl font-bold mb-3">
-          Nos encontramos en
-          <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#831378] to-purple-900">
-            Carolina
-          </span>
+  <section id="visita" class="w-full bg-white py-16 lg:py-24 overflow-hidden relative">
+    
+    <!-- Título y Encabezado (Estilo Editorial) -->
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 mb-12 text-center lg:text-left">
+      <div class="flex flex-col items-center lg:items-start gap-3">
+        <span class="text-[9px] font-black uppercase tracking-[0.4em] text-[#831378] opacity-60">Atelier Principal</span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 leading-tight tracking-tighter">
+          Nuestra <span class="text-[#831378]">Ubicación</span>
         </h2>
-        <p class="text-gray-600 text-lg max-w-2xl mx-auto">
-          Visita nuestro atelier y descubre la magia de la alta costura
-        </p>
       </div>
+    </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        <!-- MAPA -->
-        <div class="relative group">
-          <div class="absolute -inset-1 bg-gradient-to-r from-[#831378] to-purple-600 rounded-3xl blur opacity-25 group-hover:opacity-100 transition duration-500"></div>
-          
-          <div class="relative rounded-3xl overflow-hidden shadow-2xl bg-white">
+    <!-- Contenedor Mapa e Info -->
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- MAPA (Lado Izquierdo - Gran Formato) -->
+        <div class="lg:col-span-7 relative group">
+          <div class="absolute -inset-2 bg-[#831378]/5 rounded-[3rem] blur-xl opacity-50 group-hover:opacity-100 transition duration-700"></div>
+          <div class="relative rounded-[2.5rem] overflow-hidden shadow-2xl border border-gray-100 bg-white aspect-video lg:aspect-auto lg:h-[450px]">
             <iframe
-              class="w-full h-96"
+              class="w-full h-full grayscale hover:grayscale-0 transition-all duration-1000"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15959.18896030821!2d-78.49531726289587!3d-0.1862512969906275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d59a7ce9ba8755%3A0x755f2bd0d36e70a7!2sLa%20Carolina%2C%20Quito%2C%20Ecuador!5e0!3m2!1ses-419!2sus!4v1765773002577!5m2!1ses-419!2sus"
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
               title="Ubicación en Google Maps"
             ></iframe>
           </div>
-
-          <!-- Badge de ubicación
-          <div class="absolute -bottom-4 -right-4 bg-[#831378] text-white px-4 py-2 rounded-full shadow-lg font-semibold text-sm">
-            📍 Latacunga
-          </div> -->
         </div>
 
-        <!-- CONTENIDO -->
-        <div class="space-y-8">
-          <!-- Descripción principal -->
-          <div>
-            <h3 class="text-3xl font-bold text-gray-900 mb-4">
-              Arreglos de Alta Costura
-            </h3>
-            <p class="text-gray-700 text-lg leading-relaxed mb-6">
-              Presentamos nuestro servicio de <span class="font-semibold text-[#831378]">arreglos de alta costura</span> basado en la experiencia y la pasión por cada detalle.
-            </p>
-            <p class="text-gray-700 text-lg leading-relaxed">
-              Transformamos y adaptamos sin esfuerzo cada prenda para que se ajuste perfectamente a tu cuerpo y estilo. Tu confianza es nuestra prioridad.
+        <!-- INFO Y CONTACTO (Lado Derecho) -->
+        <div class="lg:col-span-5 space-y-10">
+          
+          <div class="space-y-4">
+            <h3 class="text-2xl font-black text-gray-900 tracking-tight">Estamos cerca de ti</h3>
+            <p class="text-gray-600 leading-relaxed font-medium italic-style">
+              Un espacio dedicado a la precisión y el estilo personal. Agenda tu cita para una experiencia totalmente personalizada.
             </p>
           </div>
 
-          <!-- Información de contacto -->
-          <div class="space-y-4 pt-4 border-t-2 border-purple-200">
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 bg-gradient-to-br from-[#831378] to-purple-600 rounded-full flex items-center justify-center text-white text-xl">
-                📍
+          <!-- Items de Contacto (Minimalista) -->
+          <div class="space-y-6">
+            <div class="flex items-start gap-4 group">
+              <div class="w-10 h-10 rounded-xl bg-[#831378]/5 flex items-center justify-center text-[#831378] group-hover:bg-[#831378] group-hover:text-white transition-all duration-300">
+                <MapPin class="w-5 h-5" />
               </div>
               <div>
-                <p class="font-semibold text-gray-900">Ubicación</p>
-                <p class="text-gray-600">Latacunga, Pichincha - Ecuador</p>
+                <p class="text-[10px] font-black uppercase tracking-widest text-[#831378]/40 mb-1">Dirección</p>
+                <p class="text-gray-700 font-bold text-sm">Latacunga, Pichincha - Ecuador</p>
               </div>
             </div>
 
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 bg-gradient-to-br from-[#831378] to-purple-600 rounded-full flex items-center justify-center text-white text-xl">
-                📱
+            <div class="flex items-start gap-4 group">
+              <div class="w-10 h-10 rounded-xl bg-[#831378]/5 flex items-center justify-center text-[#831378] group-hover:bg-[#831378] group-hover:text-white transition-all duration-300">
+                <Phone class="w-5 h-5" />
               </div>
               <div>
-                <p class="font-semibold text-gray-900">Teléfono</p>
-                <a href="tel:+593" class="text-[#831378] hover:text-purple-600 transition">
-                  Llamar ahora
+                <p class="text-[10px] font-black uppercase tracking-widest text-[#831378]/40 mb-1">Teléfono</p>
+                <a href="tel:+593" class="text-gray-700 font-bold text-sm hover:text-[#831378] transition-colors">
+                  Contactar vía Llamada
                 </a>
               </div>
             </div>
 
-            <div class="flex items-center gap-4">
-              <div class="w-12 h-12 bg-gradient-to-br from-[#831378] to-purple-600 rounded-full flex items-center justify-center text-white text-xl">
-                🕐
+            <div class="flex items-start gap-4 group">
+              <div class="w-10 h-10 rounded-xl bg-[#831378]/5 flex items-center justify-center text-[#831378] group-hover:bg-[#831378] group-hover:text-white transition-all duration-300">
+                <Clock class="w-5 h-5" />
               </div>
               <div>
-                <p class="font-semibold text-gray-900">Horario</p>
-                <p class="text-gray-600">Lunes a Viernes: 9 AM - 6 PM</p>
+                <p class="text-[10px] font-black uppercase tracking-widest text-[#831378]/40 mb-1">Atención</p>
+                <p class="text-gray-700 font-bold text-sm">Lun - Vie: 9 AM a 6 PM</p>
               </div>
             </div>
           </div>
 
-          <!-- Botón de contacto mejorado -->
-          <div class="flex flex-col sm:flex-row gap-4 pt-4">
-            <button
-              class="px-8 py-4 bg-gradient-to-r from-[#831378] to-purple-600 hover:from-purple-700 hover:to-purple-800 text-white font-bold rounded-full transition duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-            >
-              Contáctanos
+          <!-- CTAs (Compacto) -->
+          <div class="flex flex-wrap gap-4 pt-4">
+            <button class="px-8 py-4 bg-gray-900 text-white rounded-2xl font-black text-[10px] uppercase tracking-[0.2em] hover:bg-[#831378] transition-all duration-300 shadow-xl shadow-gray-200">
+              Agendar Cita
             </button>
-            <button
-              class="px-8 py-4 border-2 border-[#831378] text-[#831378] hover:bg-purple-50 font-bold rounded-full transition duration-300"
-            >
-              Más Información
+            <button class="px-8 py-4 border border-gray-200 text-gray-900 rounded-2xl font-black text-[10px] uppercase tracking-[0.2em] hover:bg-gray-50 transition-all duration-300">
+              Ver Catálogo
             </button>
           </div>
+
         </div>
       </div>
-
-    
     </div>
   </section>
 </template>
 
 <script setup>
-// Lógica de contacto aquí si es necesario
+import { MapPin, Phone, Clock } from 'lucide-vue-next';
 </script>
 
 <style scoped>
-/* Animación suave */
-@media (prefers-reduced-motion: no-preference) {
-  section {
-    animation: fadeIn 0.8s ease-out;
-  }
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.italic-style {
+  font-family: serif;
+  font-style: italic;
 }
 </style>
