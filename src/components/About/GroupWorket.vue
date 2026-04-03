@@ -85,10 +85,10 @@
 </template>
 
 <script setup>
-// Import de imágenes generadas
-const teamMain = new URL('./../../atelier_team_working_1775252740946.png', import.meta.url).href
-const teamDetail1 = new URL('./../../tailor_hand_drafting_1775252755385.png', import.meta.url).href
-const teamDetail2 = new URL('./../../professional_seamstress_portrait_1775252769946.png', import.meta.url).href
+// Import de imágenes locales (movidas para compatibilidad con Vercel)
+const teamMain = new URL('@/assets/team/team-main.png', import.meta.url).href
+const teamDetail1 = new URL('@/assets/team/team-detail-1.png', import.meta.url).href
+const teamDetail2 = new URL('@/assets/team/team-detail-2.png', import.meta.url).href
 </script>
 
 <style scoped>

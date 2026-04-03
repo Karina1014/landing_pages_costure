@@ -90,7 +90,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
-import img1 from "@/assets/home/costura1.png";
+import img1 from "@/assets/home/Costura1.png";
 import img2 from "@/assets/home/costura2.png";
 import img3 from "@/assets/home/costura3.png";
 import img4 from "@/assets/home/costura4.png";
