@@ -9,9 +9,9 @@
       >
         <div class="flex items-center gap-3 mb-2">
           <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-           <p class="text-[10px] font-black uppercase tracking-[0.2em] text-[#831378]">Atelier CosturaRous</p>
+           <p class="text-[10px] font-black uppercase tracking-[0.2em] text-[#831378]">Taller Costura</p>
         </div>
-        <p class="text-sm text-gray-800 font-bold leading-tight">¿Deseas agendar un ajuste hoy mismo? ✨</p>
+        <p class="text-sm text-gray-800 font-bold leading-tight">¿Tienes alguna duda con tu ropa? ✨</p>
         <!-- Flecha del Popup -->
         <div class="absolute -bottom-2 left-8 w-4 h-4 bg-white/95 border-r border-b border-white/50 rotate-45"></div>
       </div>
@@ -79,8 +79,8 @@
 <script setup>
 import { ref, onMounted } from 'vue'
 
-const phoneNumber = '+593959749898'
-const message = 'Hola CosturaRous! Quisiera agendar una cita para un ajuste.'
+const phoneNumber = '593987561663'
+const message = '¡Hola Entre hilos & Agujas! Tengo una consulta sobre un arreglo. ¿Podrían ayudarme? ✨'
 const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
 
 const showPopup = ref(false)

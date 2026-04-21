@@ -1,5 +1,5 @@
 <template>
-  <section id="testimonios" class="w-full bg-white py-16 lg:py-24 overflow-hidden relative">
+  <section id="testimonios" class="w-full bg-white pt-4 pb-12 lg:pt-6 lg:pb-16 overflow-hidden relative">
     
     <!-- Título y Encabezado -->
     <div class="max-w-7xl mx-auto px-6 lg:px-12 mb-12 text-center">

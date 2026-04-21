@@ -1,5 +1,5 @@
 <template>
-  <div id="inicio" class="pt-20 lg:pt-28 pb-12 lg:pb-20 min-h-[70vh] flex flex-col lg:flex-row bg-white w-full items-center px-6 sm:px-12 lg:px-24 overflow-hidden relative">
+  <div id="inicio" class="pt-20 lg:pt-28 pb-8 lg:pb-10 min-h-[70vh] flex flex-col lg:flex-row bg-white w-full items-center px-6 sm:px-12 lg:px-24 overflow-hidden relative">
     <!-- Elementos Decorativos -->
     <div class="absolute top-0 left-0 w-full h-full bg-[#FAF9FC] -z-10"></div>
     

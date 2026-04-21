@@ -43,12 +43,12 @@ const isLoaded = ref(false)
 
 const imgs = [
   new URL('@/assets/home/costura5.gif', import.meta.url).href,
-  new URL('@/assets/home/tailoring.png', import.meta.url).href,
-  new URL('@/assets/home/colagador.jpeg', import.meta.url).href,
-  new URL('@/assets/home/Negocio1 (2).jpeg', import.meta.url).href,
-  new URL('@/assets/home/Negocio1 (3).jpeg', import.meta.url).href,
-  new URL('@/assets/home/arreglov1.jpeg', import.meta.url).href,
-  new URL('@/assets/home/Negocio1 (1).jpeg', import.meta.url).href,
+  new URL('/img/BusoVerde2.jpeg', import.meta.url).href,
+  new URL('/img/CosturaJean3.jpeg', import.meta.url).href,
+  new URL('/img/LugarSillon4.jpeg', import.meta.url).href,
+  new URL('/img/vestidocelesteperlas6.jpeg', import.meta.url).href,
+  new URL('/img/AreaHilos5.jpeg', import.meta.url).href,
+  new URL('/img/vestidoDorado7.jpeg', import.meta.url).href,
 ]
 
 const col1 = [imgs[0], imgs[1], imgs[2], imgs[3]]
@@ -109,8 +109,8 @@ onMounted(() => {
 }
 
 .mobile-image-card {
-  width: 125px; /* Más pequeño para minimalismo */
-  height: 125px;
+  width: 200px; /* Más pequeño para minimalismo */
+  height: 200px;
   border-radius: 1rem;
   overflow: hidden;
   box-shadow: 0 4px 15px -3px rgba(0, 0, 0, 0.08);

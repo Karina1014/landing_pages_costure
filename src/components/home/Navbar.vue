@@ -1,11 +1,11 @@
 <template>
-  <nav class="fixed top-0 left-0 w-full z-[999] bg-[#D6D2E0] px-6 py-4 flex justify-center shadow-[0_4px_20px_rgba(0,0,0,0.08)] backdrop-blur-sm bg-opacity-95">
+  <nav class="fixed top-0 left-0 w-full z-[999] bg-[#D6D2E0] px-6 py-2 flex justify-center shadow-[0_4px_20px_rgba(0,0,0,0.08)] backdrop-blur-sm bg-opacity-95">
     <div class="w-full max-w-7xl flex items-center justify-between relative">
 
       <!-- Logo & Branding -->
       <a href="/" class="flex items-center gap-4 group">
         <div class="relative">
-          <img src="../../assets/logo/LogoRosita.png" alt="Logo" class="h-14 w-auto transition-transform duration-500 group-hover:scale-110" />
+          <img src="/img/LogoEntreHilos1.webp" alt="Logo" class="h-18 w-auto transition-transform duration-500 group-hover:scale-110" />
           <div class="absolute -inset-1 bg-[#831378] opacity-0 group-hover:opacity-10 rounded-full blur transition-opacity"></div>
         </div>
         <div class="flex flex-col">
@@ -38,7 +38,7 @@
         </a>
 
         <!-- Menú Hamburguesa -->
-        <button @click="isOpen = !isOpen" class="lg:hidden p-2 text-[#831378] hover:bg-white/20 rounded-lg transition-colors focus:outline-none">
+        <button @click="isOpen = !isOpen" class="lg:hidden p-2 text-[#4294BD] hover:bg-white/20 rounded-lg transition-colors focus:outline-none">
           <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
             <path v-if="!isOpen" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
             <path v-else stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
